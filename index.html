@@ -1,0 +1,280 @@
+<html>
+
+<head>
+
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/custom.css" rel="stylesheet">
+
+</head>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-4">
+			<h2> Blackjack For Pros</h2>
+		</div>
+		<div class="col-md-9">
+			<image src="blackjack.jpg"> </image>
+		</div>
+	</div>
+</div>
+
+<br><br>
+
+<div class="container">
+
+	<div class="row">
+		
+		<div class="col-md-5">
+			<h1> Choose how many decks</h1>
+			<input type="button" value="1" onclick="populateDeck(1)">
+			<input type="button" value="2" onclick="populateDeck(2)">
+			<input type="button" value="3" onclick="populateDeck(3)">
+			<input type="button" value="4" onclick="populateDeck(4)">
+			<input type="button" value="5" onclick="populateDeck(5)">
+			<input type="button" value="6" onclick="populateDeck(6)">
+			<input type="button" value="7" onclick="populateDeck(7)">
+			<input type="button" value="8" onclick="populateDeck(8)">
+			<input type="button" value="9" onclick="populateDeck(9)">
+			<input type="button" value="10" onclick="populateDeck(10)">
+			<input type="button" value="11" onclick="populateDeck(11)">
+			<input type="button" value="custom", onclick="customPopulate(custom)">
+		</div>
+		
+		<div class="col-md-4">
+
+		</div>
+		
+		<div class="col-md-3">
+			
+		</div>
+
+	</div>
+
+</div>
+
+<div class="container">
+
+	<div class="row">
+		
+		<div class="col-md-5">
+			<h3>Player</h3>
+		</div>
+		
+		<div class="col-md-4">
+			<h3> Deck </h3>
+		</div>
+		
+		<div class="col-md-3">
+			<h3> Dealer </h3>
+		</div>
+
+	</div>
+
+</div>
+
+<hr>
+
+<div class="container">
+
+	
+	<div class="row", id="game">
+		
+
+		<div class="col-md-3" id="player">
+			<div class="vertical-line"></div>
+		</div>
+
+		
+		
+		<div class="col-md-5">
+			<div class="vertical-line"></div>
+			<div class="image"><image src="Images/deck.gif"></div>
+		</div>
+		
+		<div class="col-md-3">
+			<div class="image" id="dealer">
+			</div>
+		</div>
+
+	
+	</div>
+
+</div>
+
+<div class="container">
+
+	
+	<div class="row", id="game">
+		
+
+		<div class="col-md-3" id="doubleDown">
+		</div>
+
+		
+		
+		<div class="col-md-5">
+
+		</div>
+		
+		<div class="col-md-3">
+
+		</div>
+
+	
+	</div>
+
+</div>
+
+<br><br><br>
+
+<div class="container">
+
+	<div class="row">
+		
+		<div class="col-md-5">
+			<input type="button" value="Start Game" onclick= "setUpGame(), startGame(), initialCount(15000)">
+			<input type="button" value="New Game" onclick = "newGame()">
+
+
+		</div>
+		
+		<div class="col-md-4">
+			<div class="btn-group" id="DeckCount">
+			</div>
+		</div>
+		
+		<div class="col-md-3">
+			<input type="button" value= "Bust the Dealer", onclick="switchDealerValue(), bustDealer(), addToDealerValue(), updateCount(), deckCount(), dealerCheck()">
+		</div>
+
+	</div>
+
+</div>
+
+<br>
+
+<div class="container">
+
+	<div class="row">
+		
+		<div class="col-md-5">
+			<input type="button" value="Deal Me In" onclick= "createValue(), dealCardDealer(), dealDownCard(), dealHand(), updateCount(), deckCount()">
+			<input type="button" value="Hit Me" onclick= "checks(), switchValue(), dealDoubleDownCard(), dealCardPlayer(),  updateCount(), deckCount(), doubleDownAddToValue(), addToValue()">
+			<input type="button" value="Stand" onclick= "checks(), revealDownCard(), createDealerValue(), switchDealerValue(), updateCount(), deckCount()">
+			<input type="button" value="Double Down" onclick="doubleDownInitialDisplay(), displayBetAmount()">
+		</div>		
+		<div class="col-md-4">
+			<div class="btn-group" id="RemainingDeck">
+			</div>
+		</div>
+		
+		<div class="col-md-3">
+		</div>
+
+	</div>
+
+</div>
+
+<br>
+
+<div class="container">
+
+	<div class="row">
+		
+		<div class="col-md-5">
+			<h1> Make a wager</h1>
+			<input type="button" value ="5" onclick = "wager(5), calculateWagers(), displayChippies(), displayBetAmount()">
+			<input type="button" value ="10" onclick = "wager(10), calculateWagers(),  displayChippies(), displayBetAmount()">
+			<input type="button" value ="50" onclick = "wager(50), calculateWagers(),  displayChippies(), displayBetAmount()">
+			<input type="button" value ="100" onclick = "wager(100), calculateWagers(),  displayChippies(), displayBetAmount()">
+			<input type="button" value ="500" onclick = "wager(500), calculateWagers(), displayChippies(), displayBetAmount()">
+			<div id="Everything">
+				<input type="button" value ="Custom" onclick = "wager(custom), calculateWagers(), displayChippies(), displayBetAmount()">
+				<input type="button" value="Wager it all", onclick="wagerEverything(), calculateWagers(), displayChippies(), displayBetAmount()">
+			</div>
+			<div>
+				<input type="button" value= "Decrease Wager" onclick="wager(decrease), calculateWagers(), displayChippies(), displayBetAmount()">
+				<input type="button" value= "Add Chippies" onclick="addChippies()">
+			</div>
+		</div>
+		
+		<div class="col-md-4">
+
+		</div>
+		
+		<div class="col-md-3">
+			
+		</div>
+
+	</div>
+
+</div>
+
+<br><br><br><br><hr>
+
+
+<div class="btn-group">
+	<button class="btn btn-primary btn-large", id="score"> Hand Value </button>
+	
+</div>
+
+<div class="glyphicon glyphicon-arrow-right">
+</div>
+
+<div class="btn-group" id="handValues">
+</div>
+
+<br><br>
+
+<div id="secondHand">
+</div>
+
+<div class="btn-group">
+	<button class="btn btn-primary btn-large"> Dealer Hand Value </button>
+	
+</div>
+
+<div class="glyphicon glyphicon-arrow-right">
+</div>
+
+<div class="btn-group" id="dealerValue">
+</div>
+
+<br><br>
+
+<div class="btn-group">
+	<button class="btn btn-primary btn-large" id="ChipCount"> Chippies </button>
+	
+</div>
+
+<div class="glyphicon glyphicon-arrow-right">
+</div>
+
+<div class="btn-group" id="chippies">
+</div>
+
+<br><br>
+
+<div class="btn-group">
+	<button class="btn btn-primary btn-large"> Amount Bet </button>
+	
+</div>
+
+<div class="glyphicon glyphicon-arrow-right">
+</div>
+
+<div class="btn-group" id="amountBet">
+</div>
+
+<br><br><br><hr>
+
+<p><i> Created by Adam Cragg </i></p>
+
+
+<script type="text/javascript" src="Decks.js"></script>
+<script type="text/javascript" src="main.js"></script>
+<script type="text/javascript" src="playGame.js"></script>
+
+
+</html>
+
